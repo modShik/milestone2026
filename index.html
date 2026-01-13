@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milestone</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#8c2f1b" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Dancing+Script:wght@400;700&family=Fraunces:opsz,wght@9..144,300;600&family=Great+Vibes&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* Defaults */
+        --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        --glass-bg: rgba(30, 41, 59, 0.65);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --font-main: "Inter", sans-serif;
+        --accent: #3b82f6;
+
+        /* Intensity Scale Default */
+        --lvl-0: rgba(255, 255, 255, 0.05);
+        --lvl-1: #ef4444;
+        --lvl-2: #f97316;
+        --lvl-3: #eab308;
+        --lvl-4: #22c55e;
+        --lvl-5: #3b82f6;
+      }
+
+      /* --- THEMES --- */
+      body.theme-antique {
+        --bg-gradient: linear-gradient(to bottom, #d5cbb8, #b6a78e);
+        --glass-bg: rgba(78, 62, 50, 0.1);
+        --glass-border: rgba(78, 62, 50, 0.2);
+        --text-main: #423020;
+        --text-muted: #6f5945;
+        --accent: #8c2f1b;
+        --lvl-0: rgba(66, 48, 32, 0.1);
+        --lvl-1: #8c2f1b;
+        --lvl-2: #b5651d;
+        --lvl-3: #cca43b;
+        --lvl-4: #5a7d48;
+        --lvl-5: #2c4c3b;
+      }
+
+      body.theme-traditional {
+        --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #e8e4dc 100%);
+        --glass-bg: rgba(255, 255, 255, 0.6);
+        --glass-border: rgba(0, 0, 0, 0.1);
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --accent: #dc2626;
+        --lvl-0: rgba(0, 0, 0, 0.05);
+        --lvl-5: #dc2626;
+      }
+
+      body.theme-charcoal-orange {
+        --bg-gradient: linear-gradient(to bottom right, #2c2c2c, #1a1a1a);
+        --glass-bg: rgba(60, 60, 60, 0.4);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --text-main: #e0e0e0;
+        --text-muted: #a0a0a0;
+        --accent: #f97316;
+        --lvl-0: rgba(255, 255, 255, 0.08);
+        --lvl-1: #7f1d1d;
+        --lvl-2: #c2410c;
+        --lvl-3: #ea580c;
+        --lvl-4: #fb923c;
+        --lvl-5: #ffedd5;
+      }
+      body.theme-charcoal-orange .c-1,
+      body.theme-charcoal-orange .c-2,
+      body.theme-charcoal-orange .c-3,
+      body.theme-charcoal-orange .c-4 {
+        color: white !important;
+      }
+      body.theme-charcoal-orange .c-5 {
+        color: black !important;
+      }
+
+      body.theme-charcoal-wine {
+        --bg-gradient: linear-gradient(to bottom, #232323, #121212);
+        --glass-bg: rgba(40, 40, 40, 0.6);
+        --glass-border: rgba(255, 255, 255, 0.05);
+        --text-main: #eebbba;
+        --text-muted: #8c7676;
+        --accent: #881337;
+        --lvl-0: rgba(255, 255, 255, 0.05);
+        --lvl-1: #4c0519;
+        --lvl-2: #881337;
+        --lvl-3: #be123c;
+        --lvl-4: #e11d48;
+        --lvl-5: #fb7185;
+      }
+
+      body.theme-midnight {
+        --bg-gradient: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+        --glass-bg: rgba(15, 23, 42, 0.6);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --text-main: #f1f5f9;
+        --text-muted: #64748b;
+        --accent: #6366f1;
+      }
+
+      /* --- FONTS --- */
+      body.font-seine {
+        --font-main: "Parisienne", cursive;
+        font-size: 1.2rem;
+      }
+      body.font-warfare {
+        --font-main: "Black Ops One", system-ui;
+        letter-spacing: 1px;
+      }
+      body.font-daltomy {
+        --font-main: "Great Vibes", cursive;
+        font-size: 1.3rem;
+      }
+      body.font-dancing {
+        --font-main: "Dancing Script", cursive;
+        font-size: 1.2rem;
+      }
+      body.font-smothy {
+        --font-main: "Fraunces", serif;
+      }
+      body.font-mono {
+        --font-main: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-main);
+        background: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-main);
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        transition: all 0.5s ease;
+      }
+
+      /* Adjustments for script fonts */
+      body.font-seine .streak-num,
+      body.font-daltomy .streak-num,
+      body.font-dancing .streak-num {
+        font-family: "Fraunces", serif;
+      }
+      body.font-seine input,
+      body.font-daltomy input,
+      body.font-dancing input {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* Layout */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 20px;
+        transition: transform 0.5s ease;
+        height: calc(100vh - 40px); /* Fill screen for sidebar positioning */
+      }
+
+      /* Glass Cards */
+      .glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Sidebar */
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+      }
+      .profile-header h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        font-weight: 800;
+      }
+      .profile-header p {
+        color: var(--text-muted);
+        margin: 5px 0 0 0;
+        font-size: 0.9rem;
+      }
+
+      .countdown-box {
+        margin-top: 15px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        border-top: 1px solid var(--glass-border);
+        padding-top: 15px;
+      }
+
+      .streak-box {
+        text-align: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+      }
+      .streak-num {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 5px;
+        color: var(--accent);
+      }
+      .streak-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.7;
+      }
+
+      /* Bottom Settings Button Wrapper */
+      .settings-wrapper {
+        margin-top: auto;
+      }
+
+      /* Heatmap */
+      .heatmap-grid {
+        display: grid;
+        grid-template-columns: repeat(53, 1fr);
+        gap: 4px;
+        height: 120px;
+        margin-top: 10px;
+      }
+      .heat-cell {
+        background-color: var(--lvl-0);
+        border-radius: 3px;
+        width: 100%;
+        height: 100%;
+        transition: 0.2s;
+      }
+      .heat-cell:hover {
+        transform: scale(1.3);
+        z-index: 10;
+        border: 1px solid var(--text-main);
+      }
+
+      /* Calendar */
+      .calendar-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid var(--glass-border);
+        color: var(--text-main);
+        padding: 10px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+        font-family: inherit;
+        font-size: 0.9rem;
+      }
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-1px);
+      }
+
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+      }
+      .day-name {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        padding-bottom: 10px;
+        font-weight: 600;
+      }
+      .day-cell {
+        aspect-ratio: 1;
+        background: var(--lvl-0);
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.2s;
+        border: 1px solid transparent;
+        color: var(--text-main);
+      }
+      .day-cell:hover {
+        transform: translateY(-3px);
+        border-color: var(--accent);
+      }
+      .day-cell.empty {
+        background: transparent;
+        cursor: default;
+      }
+
+      /* Cell Colors */
+      .c-1 {
+        background: var(--lvl-1);
+        color: white !important;
+      }
+      .c-2 {
+        background: var(--lvl-2);
+        color: white !important;
+      }
+      .c-3 {
+        background: var(--lvl-3);
+        color: black !important;
+      }
+      .c-4 {
+        background: var(--lvl-4);
+        color: black !important;
+      }
+      .c-5 {
+        background: var(--lvl-5);
+        color: white !important;
+      }
+      .has-note-dot {
+        width: 4px;
+        height: 4px;
+        background: currentColor;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 8px;
+        opacity: 0.8;
+      }
+
+      /* --- Side Panels --- */
+      .side-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 450px;
+        background: var(--bg-gradient);
+        border-left: 1px solid var(--glass-border);
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 40px;
+        z-index: 1000;
+        box-shadow: -20px 0 50px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+      }
+      .side-panel.open {
+        transform: translateX(0);
+      }
+      .close-panel {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: transparent;
+        color: var(--text-muted);
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Editor States */
+      #edit-mode-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      /* Read Mode Card */
+      #read-mode-content {
+        display: none;
+        height: 100%;
+        border-radius: 16px;
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+      .read-quote {
+        font-size: 1.5rem;
+        font-style: italic;
+        line-height: 1.6;
+      }
+      .read-quote::before {
+        content: "“";
+        font-size: 3rem;
+        display: block;
+        opacity: 0.5;
+        margin-bottom: 10px;
+      }
+      .read-quote::after {
+        content: "”";
+        font-size: 3rem;
+        display: block;
+        opacity: 0.5;
+        margin-top: 10px;
+      }
+
+      /* Settings Form */
+      .setting-group {
+        margin-bottom: 25px;
+      }
+      .setting-group label {
+        display: block;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .setting-input {
+        width: 100%;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--glass-border);
+        color: var(--text-main);
+        border-radius: 8px;
+        outline: none;
+        font-family: inherit;
+      }
+      option {
+        background: #1e293b;
+        color: white;
+      }
+
+      /* --- EXIT BUTTON --- */
+      #exit-share-btn {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        z-index: 9999;
+        width: 60px;
+        height: 60px;
+        background: var(--text-main);
+        color: var(--bg-gradient);
+        border: 2px solid var(--glass-border);
+        border-radius: 50%;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 4px 4px 0px var(--glass-border);
+        cursor: pointer;
+        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0) rotate(-180deg);
+      }
+      #exit-share-btn:hover {
+        transform: scale(1.1) rotate(10deg);
+      }
+
+      /* --- SHARE MODE --- */
+      body.share-mode {
+        overflow: auto;
+      }
+      body.share-mode #exit-share-btn {
+        opacity: 1;
+        pointer-events: all;
+        transform: scale(1) rotate(0deg);
+      }
+
+      body.share-mode .btn,
+      body.share-mode .calendar-controls,
+      body.share-mode .heatmap-container,
+      body.share-mode #settings-btn,
+      body.share-mode .close-panel {
+        display: none !important;
+      }
+
+      body.share-mode .container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 60px auto;
+        transform: none;
+        height: auto;
+      }
+      body.share-mode .sidebar {
+        text-align: center;
+        order: 1;
+        height: auto;
+      }
+      body.share-mode .main-content {
+        order: 2;
+      }
+      body.share-mode .profile-header h1 {
+        font-size: 3rem;
+      }
+      body.share-mode .glass {
+        margin-bottom: 20px;
+      }
+
+      body.share-mode #dist-container {
+        order: 1;
+      }
+      body.share-mode .streak-box-container {
+        order: 2;
+      }
+      body.share-mode #share-calendar-container {
+        order: 3;
+      }
+
+      @media (max-width: 900px) {
+        .container {
+          grid-template-columns: 1fr;
+          height: auto;
+        }
+        .side-panel {
+          width: 100%;
+        }
+        .sidebar {
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="theme-antique font-smothy">
+    <div
+      id="exit-share-btn"
+      onclick="toggleShare(false)"
+      title="Exit Share Mode"
+    >
+      ✯
+    </div>
+
+    <div class="container" id="main-container">
+      <aside class="sidebar">
+        <div>
+          <div class="glass profile-header">
+            <h1 id="header-goal">My Dashboard</h1>
+            <div id="target-display" class="countdown-box">No Target Set</div>
+          </div>
+
+          <div class="glass streak-box-container" style="margin-top: 20px">
+            <div class="streak-box">
+              <span class="streak-num" id="currentStreak">0</span>
+              <span class="streak-label">Current Streak</span>
+            </div>
+            <div
+              style="
+                margin-top: 15px;
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.8rem;
+                color: var(--text-muted);
+                padding: 0 10px;
+              "
+            >
+              <span>Longest: <b id="maxStreak">0</b></span>
+              <span>Total: <b id="totalDays">0</b></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-wrapper">
+          <button
+            id="settings-btn"
+            class="btn"
+            onclick="toggleSettings(true)"
+            style="width: 100%"
+          >
+            ⚙️ Settings
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <div class="glass" id="dist-container">
+          <h3
+            style="
+              margin: 0 0 15px 0;
+              font-size: 0.9rem;
+              color: var(--text-muted);
+              text-transform: uppercase;
+            "
+          >
+            Distribution
+          </h3>
+          <div
+            style="
+              display: flex;
+              height: 12px;
+              border-radius: 6px;
+              overflow: hidden;
+            "
+            id="distributionBar"
+          ></div>
+          <p
+            id="distributionComment"
+            style="
+              margin-top: 15px;
+              font-size: 0.9rem;
+              color: var(--text-muted);
+              text-align: center;
+              font-style: italic;
+            "
+          ></p>
+        </div>
+
+        <div class="glass heatmap-container">
+          <h3
+            style="
+              margin: 0;
+              font-size: 0.9rem;
+              color: var(--text-muted);
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Yearly Overview
+          </h3>
+          <div class="heatmap-grid" id="heatmap"></div>
+        </div>
+
+        <div class="glass" id="share-calendar-container">
+          <div class="calendar-controls">
+            <h2 id="monthLabel" style="margin: 0; font-size: 1.5rem">
+              January
+            </h2>
+            <div>
+              <button class="btn" onclick="changeMonth(-1)">Prev</button>
+              <button class="btn" onclick="changeMonth(1)">Next</button>
+            </div>
+          </div>
+
+          <div class="calendar-grid" id="calendarHeader">
+            <div class="day-name">SUN</div>
+            <div class="day-name">MON</div>
+            <div class="day-name">TUE</div>
+            <div class="day-name">WED</div>
+            <div class="day-name">THU</div>
+            <div class="day-name">FRI</div>
+            <div class="day-name">SAT</div>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+      </main>
+    </div>
+
+    <div id="editor" class="side-panel">
+      <button class="close-panel" onclick="closeEditor()">← Back</button>
+      <h2 id="editorDate" style="margin-top: 40px; margin-bottom: 20px">
+        Day 01
+      </h2>
+
+      <div id="edit-mode-content">
+        <p style="color: var(--text-muted)">Rate your day</p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+          "
+        >
+          <div
+            class="lvl-btn"
+            style="
+              background: var(--lvl-1);
+              height: 50px;
+              border-radius: 8px;
+              opacity: 0.3;
+              cursor: pointer;
+            "
+            onclick="setScore(1)"
+          ></div>
+          <div
+            class="lvl-btn"
+            style="
+              background: var(--lvl-2);
+              height: 50px;
+              border-radius: 8px;
+              opacity: 0.3;
+              cursor: pointer;
+            "
+            onclick="setScore(2)"
+          ></div>
+          <div
+            class="lvl-btn"
+            style="
+              background: var(--lvl-3);
+              height: 50px;
+              border-radius: 8px;
+              opacity: 0.3;
+              cursor: pointer;
+            "
+            onclick="setScore(3)"
+          ></div>
+          <div
+            class="lvl-btn"
+            style="
+              background: var(--lvl-4);
+              height: 50px;
+              border-radius: 8px;
+              opacity: 0.3;
+              cursor: pointer;
+            "
+            onclick="setScore(4)"
+          ></div>
+          <div
+            class="lvl-btn"
+            style="
+              background: var(--lvl-5);
+              height: 50px;
+              border-radius: 8px;
+              opacity: 0.3;
+              cursor: pointer;
+            "
+            onclick="setScore(5)"
+          ></div>
+        </div>
+
+        <p style="color: var(--text-muted)">Journal Entry</p>
+        <textarea
+          id="editorNote"
+          style="
+            flex: 1;
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            padding: 15px;
+            resize: none;
+            outline: none;
+            margin-bottom: 20px;
+            font-family: inherit;
+          "
+          placeholder="Notes..."
+        ></textarea>
+
+        <div style="display: flex; gap: 10px; margin-top: auto">
+          <button
+            class="btn"
+            style="flex: 1; border-color: #ef4444; color: #ef4444"
+            onclick="setScore(0); saveEntry()"
+          >
+            Clear
+          </button>
+          <button
+            class="btn"
+            style="
+              flex: 2;
+              background: var(--text-main);
+              color: var(--bg-gradient);
+              font-weight: bold;
+            "
+            onclick="saveEntry()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+
+      <div id="read-mode-content">
+        <div class="read-quote" id="readNoteText"></div>
+      </div>
+    </div>
+
+    <div id="settings-panel" class="side-panel">
+      <button class="close-panel" onclick="toggleSettings(false)">
+        ← Back
+      </button>
+      <h2 style="margin-top: 40px">Settings</h2>
+
+      <button
+        id="share-btn"
+        class="btn"
+        onclick="toggleShare(true)"
+        style="
+          width: 100%;
+          margin-bottom: 30px;
+          background: var(--accent);
+          color: white;
+          border: none;
+        "
+      >
+        📸 Share View
+      </button>
+
+      <div class="setting-group">
+        <label>Goal Name</label>
+        <input
+          type="text"
+          id="set-header"
+          class="setting-input"
+          oninput="updateSettings()"
+        />
+      </div>
+
+      <div class="setting-group">
+        <label>Theme</label>
+        <select
+          id="set-theme"
+          class="setting-input"
+          onchange="updateSettings()"
+        >
+          <option value="theme-antique">Antique (Paper)</option>
+          <option value="theme-traditional">Traditional (Ink)</option>
+          <option value="theme-charcoal-orange">Charcoal & Orange</option>
+          <option value="theme-charcoal-wine">Charcoal & Wine</option>
+          <option value="theme-midnight">Midnight (Dark)</option>
+        </select>
+      </div>
+
+      <div class="setting-group">
+        <label>Font Style</label>
+        <select id="set-font" class="setting-input" onchange="updateSettings()">
+          <option value="font-seine">Au Bord (Script)</option>
+          <option value="font-daltomy">Daltomy (Calligraphy)</option>
+          <option value="font-dancing">Dancing Script (Cursive)</option>
+          <option value="font-warfare">Warfare (Stencil)</option>
+          <option value="font-smothy">Smothy (Creamy Serif)</option>
+          <option value="font-mono">Monospace</option>
+        </select>
+      </div>
+
+      <div class="setting-group">
+        <label>Target Date</label>
+        <input
+          type="date"
+          id="set-target"
+          class="setting-input"
+          onchange="updateSettings()"
+        />
+      </div>
+
+      <div
+        id="import-section"
+        style="
+          margin-top: auto;
+          padding-top: 20px;
+          border-top: 1px solid var(--glass-border);
+        "
+      >
+        <button
+          class="btn"
+          onclick="exportData()"
+          style="width: 100%; margin-bottom: 10px"
+        >
+          Export Backup
+        </button>
+        <input
+          type="file"
+          id="importFile"
+          style="display: none"
+          onchange="importData(this)"
+        />
+        <button
+          class="btn"
+          onclick="document.getElementById('importFile').click()"
+          style="width: 100%; border-style: dashed; opacity: 0.7"
+        >
+          Import Backup
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const STORAGE_KEY = "life_dashboard_v7";
+      const SETTINGS_KEY = "life_settings_v7";
+
+      let db = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      let settings = JSON.parse(localStorage.getItem(SETTINGS_KEY)) || {
+        header: "My Dashboard",
+        theme: "theme-antique",
+        font: "font-smothy",
+        targetDate: "",
+      };
+
+      const today = new Date();
+      let currentMonth = today.getMonth();
+      let currentYear = today.getFullYear();
+      let activeDateKey = null;
+      let activeScore = 0;
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      function init() {
+        applySettings();
+        renderHeatmap();
+        renderCalendar();
+        updateStats();
+      }
+
+      function applySettings() {
+        document.getElementById("header-goal").innerText =
+          settings.header || "My Dashboard";
+        document.getElementById("set-header").value = settings.header;
+        document.body.className = `${settings.theme} ${settings.font}`;
+        document.getElementById("set-theme").value = settings.theme;
+        document.getElementById("set-font").value = settings.font;
+        document.getElementById("set-target").value = settings.targetDate;
+        calculateCountdown();
+      }
+
+      function updateSettings() {
+        settings.header = document.getElementById("set-header").value;
+        settings.theme = document.getElementById("set-theme").value;
+        settings.font = document.getElementById("set-font").value;
+        settings.targetDate = document.getElementById("set-target").value;
+        localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+        applySettings();
+      }
+
+      function calculateCountdown() {
+        const display = document.getElementById("target-display");
+        if (!settings.targetDate) {
+          display.innerText = "Set a goal date in settings";
+          return;
+        }
+        const target = new Date(settings.targetDate);
+        const diff = target - new Date();
+        const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        display.innerText =
+          days > 0 ? `${days} Days Remaining` : "Target Passed";
+      }
+
+      function toggleSettings(open) {
+        const panel = document.getElementById("settings-panel");
+        open ? panel.classList.add("open") : panel.classList.remove("open");
+      }
+
+      function toggleShare(active) {
+        if (active) {
+          closeEditor();
+          toggleSettings(false);
+          document.body.classList.add("share-mode");
+          renderShareCalendar();
+        } else {
+          document.body.classList.remove("share-mode");
+          renderCalendar();
+        }
+      }
+
+      function renderHeatmap() {
+        const grid = document.getElementById("heatmap");
+        grid.innerHTML = "";
+        const start = new Date(currentYear, 0, 1);
+        const end = new Date(currentYear, 11, 31);
+
+        for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+          const key = formatDate(d);
+          const data = db[key] || { score: 0 };
+          const cell = document.createElement("div");
+          cell.className = "heat-cell";
+          if (data.score > 0)
+            cell.style.backgroundColor = `var(--lvl-${data.score})`;
+          cell.title = `${key}`;
+          grid.appendChild(cell);
+        }
+      }
+
+      function renderCalendar() {
+        const grid = document.getElementById("calendarGrid");
+        document.getElementById("calendarHeader").style.display = "grid";
+        document.getElementById(
+          "monthLabel"
+        ).innerText = `${months[currentMonth]} ${currentYear}`;
+        grid.innerHTML = "";
+
+        const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+        const daysInMonth = new Date(
+          currentYear,
+          currentMonth + 1,
+          0
+        ).getDate();
+
+        for (let i = 0; i < firstDay; i++) {
+          const pad = document.createElement("div");
+          pad.className = "day-cell empty";
+          grid.appendChild(pad);
+        }
+
+        for (let d = 1; d <= daysInMonth; d++) {
+          const dateObj = new Date(currentYear, currentMonth, d);
+          const key = formatDate(dateObj);
+          const data = db[key] || { score: 0 };
+
+          const cell = document.createElement("div");
+          cell.className = `day-cell ${
+            data.score > 0 ? "c-" + data.score : ""
+          }`;
+          cell.innerText = d;
+
+          const todayStr = formatDate(new Date());
+          if (key === todayStr) cell.style.border = "2px solid var(--accent)";
+
+          if (db[key] && db[key].note) {
+            const dot = document.createElement("div");
+            dot.className = "has-note-dot";
+            cell.appendChild(dot);
+          }
+
+          cell.onclick = () => openEditor(key);
+          grid.appendChild(cell);
+        }
+      }
+
+      function renderShareCalendar() {
+        const grid = document.getElementById("calendarGrid");
+        document.getElementById("calendarHeader").style.display = "none";
+        grid.innerHTML = "";
+
+        let minDateStr = Object.keys(db).sort()[0];
+        let startDate = minDateStr
+          ? new Date(minDateStr)
+          : new Date(currentYear, currentMonth, 1);
+        startDate.setMinutes(
+          startDate.getMinutes() + startDate.getTimezoneOffset()
+        );
+
+        let endDate = new Date(currentYear, currentMonth + 1, 0);
+
+        for (
+          let d = new Date(startDate);
+          d <= endDate;
+          d.setDate(d.getDate() + 1)
+        ) {
+          const key = formatDate(d);
+          const data = db[key] || { score: 0 };
+
+          const cell = document.createElement("div");
+          cell.className = `day-cell ${
+            data.score > 0 ? "c-" + data.score : ""
+          }`;
+          cell.innerText = d.toLocaleDateString("en-US", {
+            month: "short",
+            day: "2-digit",
+          });
+          cell.style.fontSize = "0.8rem";
+          cell.style.aspectRatio = "auto";
+          cell.style.padding = "10px";
+
+          grid.appendChild(cell);
+        }
+      }
+
+      function updateStats() {
+        let currentStreak = 0,
+          maxStreak = 0,
+          tempStreak = 0,
+          totalDays = 0;
+        let counts = [0, 0, 0, 0, 0, 0];
+        const start = new Date(currentYear, 0, 1);
+
+        for (
+          let d = new Date(start);
+          d <= new Date(currentYear, 11, 31);
+          d.setDate(d.getDate() + 1)
+        ) {
+          const key = formatDate(d);
+          const val = db[key] ? db[key].score : 0;
+          if (val > 0) {
+            totalDays++;
+            counts[val]++;
+            tempStreak++;
+          } else if (d < new Date().setHours(0, 0, 0, 0)) {
+            tempStreak = 0;
+          }
+          if (tempStreak > maxStreak) maxStreak = tempStreak;
+        }
+
+        let checkDate = new Date();
+        if (!db[formatDate(checkDate)])
+          checkDate.setDate(checkDate.getDate() - 1);
+
+        while (true) {
+          if (
+            db[formatDate(checkDate)] &&
+            db[formatDate(checkDate)].score > 0
+          ) {
+            currentStreak++;
+            checkDate.setDate(checkDate.getDate() - 1);
+          } else {
+            break;
+          }
+        }
+
+        document.getElementById("currentStreak").innerText = currentStreak;
+        document.getElementById("maxStreak").innerText = maxStreak;
+        document.getElementById("totalDays").innerText = totalDays;
+
+        const bar = document.getElementById("distributionBar");
+        bar.innerHTML = "";
+        if (totalDays > 0) {
+          for (let i = 1; i <= 5; i++) {
+            if (counts[i] > 0) {
+              const el = document.createElement("div");
+              el.style.width = (counts[i] / totalDays) * 100 + "%";
+              el.style.background = `var(--lvl-${i})`;
+              bar.appendChild(el);
+            }
+          }
+          const goodRatio = (counts[4] + counts[5]) / totalDays;
+          document.getElementById("distributionComment").innerText =
+            getDistributionComment(goodRatio);
+        } else {
+          bar.style.background = "var(--lvl-0)";
+          document.getElementById("distributionComment").innerText =
+            "No data yet. Start tracking!";
+        }
+      }
+
+      function getDistributionComment(ratio) {
+        if (ratio >= 0.8) return "Outstanding! You're absolutely crushing it.";
+        if (ratio >= 0.6) return "Going pretty decent! Keep this momentum.";
+        if (ratio >= 0.4) return "A solid mix. Consistency is building.";
+        if (ratio >= 0.2) return "Off to a start. Focus on more green days.";
+        return "Rough patch? Every new day is a fresh start.";
+      }
+
+      function openEditor(key) {
+        activeDateKey = key;
+
+        // 1. Date Parsing
+        const [y, m, d] = key.split("-").map(Number);
+        const dateObj = new Date(y, m - 1, d);
+        const dayName = dateObj.toLocaleDateString("en-US", {
+          weekday: "long",
+        });
+
+        // 2. Logic to determine if "locked"
+        // Calculate difference in days between Today and Selected Date
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+        const entryDate = new Date(y, m - 1, d);
+
+        // Time diff in milliseconds
+        const diffTime = now - entryDate;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+        // "Past 2 days" means: Today(0), Yesterday(1), DayBefore(2) are allowed.
+        // 3 days ago is locked.
+        const isLocked = diffDays > 2;
+
+        document.getElementById("editorDate").innerText = `${dayName} ${d}`;
+        const data = db[key] || { score: 0, note: "" };
+
+        // 3. UI Toggle based on Lock Status
+        const editMode = document.getElementById("edit-mode-content");
+        const readMode = document.getElementById("read-mode-content");
+
+        if (isLocked) {
+          // SHOW READ MODE
+          editMode.style.display = "none";
+          readMode.style.display = "flex";
+
+          const noteText = document.getElementById("readNoteText");
+
+          if (data.score > 0) {
+            // Apply background color based on score
+            readMode.style.background = `var(--lvl-${data.score})`;
+            // Text color contrast fix (similar to cell colors)
+            if (data.score === 1 || data.score === 2 || data.score === 5) {
+              readMode.style.color = "white";
+            } else {
+              readMode.style.color = "black";
+            }
+            noteText.innerText = data.note || "No words written.";
+          } else {
+            // Empty/Missed Day
+            readMode.style.background = "rgba(0,0,0,0.2)";
+            readMode.style.color = "var(--text-muted)";
+            noteText.innerText = "No entry for this day.";
+          }
+        } else {
+          // SHOW EDIT MODE
+          readMode.style.display = "none";
+          editMode.style.display = "flex";
+
+          activeScore = data.score;
+          document.getElementById("editorNote").value = data.note || "";
+
+          document.querySelectorAll("#editor .lvl-btn").forEach((btn, idx) => {
+            btn.style.opacity = idx + 1 === activeScore ? "1" : "0.3";
+            btn.style.border =
+              idx + 1 === activeScore ? "2px solid var(--text-main)" : "none";
+          });
+        }
+
+        document.getElementById("editor").classList.add("open");
+      }
+
+      function setScore(n) {
+        activeScore = n;
+        document.querySelectorAll("#editor .lvl-btn").forEach((btn, idx) => {
+          btn.style.opacity = idx + 1 === activeScore ? "1" : "0.3";
+          btn.style.border =
+            idx + 1 === activeScore ? "2px solid var(--text-main)" : "none";
+        });
+      }
+
+      function saveEntry() {
+        const note = document.getElementById("editorNote").value;
+        if (activeScore === 0 && !note.trim()) delete db[activeDateKey];
+        else db[activeDateKey] = { score: activeScore, note: note };
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+        renderCalendar();
+        renderHeatmap();
+        updateStats();
+        closeEditor();
+      }
+
+      function closeEditor() {
+        document.getElementById("editor").classList.remove("open");
+      }
+
+      function changeMonth(dir) {
+        currentMonth += dir;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        }
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        renderCalendar();
+      }
+
+      function formatDate(d) {
+        const offset = d.getTimezoneOffset() * 60000;
+        const local = new Date(d.getTime() - offset);
+        return local.toISOString().split("T")[0];
+      }
+
+      function exportData() {
+        const dataStr =
+          "data:text/json;charset=utf-8," +
+          encodeURIComponent(JSON.stringify({ data: db, settings: settings }));
+        const node = document.createElement("a");
+        node.setAttribute("href", dataStr);
+        node.setAttribute("download", "dashboard_backup.json");
+        document.body.appendChild(node);
+        node.click();
+        node.remove();
+      }
+
+      function importData(input) {
+        const file = input.files[0];
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const json = JSON.parse(e.target.result);
+            if (json.data) {
+              db = json.data;
+              settings = json.settings || settings;
+            }
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+            localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+            location.reload();
+          } catch (err) {
+            alert("Error importing file");
+          }
+        };
+        reader.readAsText(file);
+      }
+
+      init();
+    </script>
+  </body>
+</html>
